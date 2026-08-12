@@ -6,10 +6,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --brand: #4e5cff;
+  --brand-btn: #4356d6;
+  --bg-light: #fafbff;
+  --section-bg: #f5f6fa;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background: #ffffff;
   color: #111;
+  overflow-x: hidden;
 }
 
 img {
@@ -37,6 +45,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--bg-light);
 }
 
 .logo img {
@@ -50,12 +59,12 @@ a {
 
 .nav-links a {
   color: #111;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
-.nav-links a.active {
-  color: #4E5CF4;
+.nav-links a.active{
+  color:#4E5CF4;
 }
 
 .contact-btn {
@@ -76,10 +85,10 @@ a {
   font-size: large;
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:24px;
 }
 
 /* HERO */
@@ -90,6 +99,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  background: var(--section-bg);
 }
 
 .hero-left h1 {
@@ -103,23 +113,22 @@ a {
   color: #4e5cff;
 }
 
-.compliance-word {
+.compliance-word{
   position: relative;
   display: inline-block;
   color: #4e5cff;
 }
 
-.underline-vector {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -8px;
-  width: 105%;
-  max-width: none;
+.underline-vector{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:-8px;
+  width:105%;
+  max-width:none;
 }
 
 .hero-left p {
-  max-width: 620px;
   font-size: 18px;
   line-height: 32px;
   margin-bottom: 24px;
@@ -147,22 +156,26 @@ a {
   gap: 16px;
 }
 
-.primary-btn {
-  background: #4e5cff;
-  color: white;
-  border: 1px solid transparent;
-  padding: 14px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all .3s ease;
+.primary-btn{
+  background: var(--brand-btn);
+  color:white;
+  font-size: 16px;
+  font-weight: 600;
+  border:1px solid transparent;
+  padding:14px 32px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:all .3s ease;
 }
 
 .secondary-btn {
-  border: 1px solid #4e5cff;
+  border: 1px solid var(--brand-btn);
   background: transparent;
-  color: #4e5cff;
-  padding: 14px 28px;
-  border-radius: 8px;
+  color: var(--brand-btn);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -171,7 +184,7 @@ a {
 }
 
 .secondary-btn:hover {
-  background: #4e5cff;
+  background: var(--brand-btn);
   color: white;
 }
 
@@ -192,10 +205,32 @@ a {
   margin-bottom: 50px;
 }
 
+.heading-left {
+  position: relative;
+}
+
 .heading-left h2 {
   font-size: 48px;
   line-height: 70px;
   font-weight: 600;
+}
+
+.decor-squiggle {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  width: 34px;
+}
+
+.section-image {
+  position: relative;
+}
+
+.decor-chevron {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 110px;
 }
 
 .heading-left span {
@@ -223,9 +258,10 @@ a {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  border: 1px solid #E3E7FF;
+  background: var(--bg-light);
+  border: 1px solid #e5e5e5;
   border-radius: 12px;
-  padding: 28px 30px;
+  padding: 28px 32px;
   transition: 0.3s;
 }
 
@@ -242,14 +278,14 @@ a {
   line-height: 32px;
 }
 
-.contact-btn:hover {
-  background: white;
-  color: #4E5CF4;
-  border: 1px solid #4E5CF4;
+.contact-btn:hover{
+    background:white;
+    color:#4E5CF4;
+    border:1px solid #4E5CF4;
 }
 
-.contact-btn:hover img {
-  filter: brightness(0) saturate(100%) invert(39%) sepia(98%) saturate(1780%) hue-rotate(220deg);
+.contact-btn:hover img{
+    filter: brightness(0) saturate(100%) invert(39%) sepia(98%) saturate(1780%) hue-rotate(220deg);
 }
 
 /* GLOBAL TRANSITIONS */
@@ -282,12 +318,12 @@ a,
 
 .primary-btn:hover {
   background: white;
-  color: #4e5cff;
-  border: 1px solid #4e5cff;
+  color: var(--brand-btn);
+  border: 1px solid var(--brand-btn);
 }
 
 .secondary-btn:hover {
-  background: #4e5cff;
+  background: var(--brand-btn);
   color: white;
 }
 
@@ -295,7 +331,7 @@ a,
 
 .feature-card:hover {
   border-color: #4e5cff;
-  box-shadow: 0 8px 20px rgba(78, 92, 255, .12);
+  box-shadow: 0 4px 12px rgba(78, 92, 255, 0.15);
 }
 
 .feature-card:hover h3 {
@@ -332,8 +368,8 @@ a,
   overflow-y: auto;
 }
 
-.mobile-menu nav a.active {
-  color: #4E5CF4;
+.mobile-menu nav a.active{
+  color:#4E5CF4;
 }
 
 .mobile-menu.active {
@@ -364,38 +400,31 @@ a,
   color: #4e5cff;
 }
 
-.mobile-menu nav {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 24px;
+.mobile-menu nav{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-top:24px;
 }
 
-.mobile-menu nav a {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 12px 0;
+.mobile-menu nav a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#111;
+  font-size:14px;
+  font-weight:400;
+  padding:8px 0;
 }
 
-/* TABLET */
+/* NAVBAR BREAKPOINT
+   Switches to the hamburger menu before the desktop nav links
+   run out of room (fixes the broken layout between 953px and 769px). */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   .nav-links {
     display: none;
-  }
-
-  .mobile-contact-btn {
-    width: 100%;
-  }
-
-  .mobile-menu {
-    width: 42%;
-    min-width: 320px;
-    max-width: 420px;
   }
 
   .menu-btn {
@@ -406,9 +435,22 @@ a,
   }
 
   .navbar {
-    padding: 24px 40px;
+    padding: 24px 30px;
   }
 
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+  .mobile-contact-btn {
+  width: 55%;
+  }
+
+  .mobile-menu {
+    width: 500px;
+  }
 
   .hero {
     grid-template-columns: 1fr;
@@ -421,8 +463,11 @@ a,
     line-height: 75px;
   }
 
-  .benefits li {
-    justify-content: center;
+  .benefits {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero-buttons {
@@ -438,6 +483,16 @@ a,
   .heading-left h2 {
     font-size: 46px;
     line-height: 60px;
+  }
+
+  .decor-squiggle {
+    top: -6px;
+    right: 6px;
+    width: 26px;
+  }
+
+  .decor-chevron {
+    width: 90px;
   }
 
   .banner-image {
@@ -459,17 +514,13 @@ a,
     padding: 20px;
   }
 
-  .heading-left h2 span {
-    white-space: nowrap;
-  }
-
   .nav-actions .contact-btn {
     display: none;
   }
 
-  .underline-vector {
-    bottom: -6px;
-  }
+  .underline-vector{
+  bottom:-6px;
+}
 
   .compliance-section {
     padding: 20px;
@@ -495,13 +546,11 @@ a,
 
   .benefits li {
     font-size: 16px;
-    justify-content: flex-start;
-    text-align: left;
   }
 
   .heading-left h2 {
-    font-size: 34px;
-    line-height: 48px;
+    font-size: 30px;
+    line-height: 42px;
   }
 
   .feature-card {
@@ -522,19 +571,19 @@ a,
   }
 }
 
-.mobile-menu nav a:hover {
-  color: #4e5cff;
+.mobile-menu nav a:hover{
+  color:#4e5cff;
 }
 
-.close-menu:hover {
-  transform: rotate(90deg);
+.close-menu:hover{
+  transform:rotate(90deg);
 }
 
-.mobile-contact-btn {
-  transition: all .3s ease;
+.mobile-contact-btn{
+  transition:all .3s ease;
 }
 
-.mobile-contact-btn:hover {
-  background: #fff;
-  color: #4e5cff;
+.mobile-contact-btn:hover{
+  background:#fff;
+  color:#4e5cff;
 }
